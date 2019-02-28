@@ -1,29 +1,32 @@
 import React, { Component } from 'react';
 import './App.css';
 import continents from './continents.json';
-import Continent from './Continent';
+import Continent from './Components/Continent';
+import Country from './Components/Country';
+import Flag from './Components/Flag';
 
-//var data = continents;
-//console.log(data[0].continent);
+const continentData = continents;
+//console.log(continentData);
+
 class App extends Component {
-  
- 
-
- getData = (data)=>{
-   data.prevent.default();
-  
-  console.log(data);
+ state = {
+   continent: undefined,
+   countries: undefined,
+   flag: undefined
  }
 
 
-  render() {
-    return (
-      
-      <div className = 'App'>
-        <h1>Flag Picker</h1><br/>
-        <h3>This App will help you to learn flags around the world in 3 Steps</h3>
 
-        <Continent continents = {continents}/>
+
+  render() {
+
+    return (
+
+      <div className = 'App'>
+        <Continent/>
+        <Country/>
+        <Flag/>
+        
       </div>
     );
   }
